@@ -9,6 +9,10 @@
         "email": "gugurehermann@gmail.com",
         "url": "https://sentientteam.freeforums.org/"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Gustavo6046/zdvode2-vscode.git"
+    },
     "engines": {
         "vscode": "^1.28.0"
     },
@@ -24,7 +28,7 @@
         }],
         "grammars": [{
             "language": "zdcode2",
-            "scopeName": "text.zdcode2",
+            "scopeName": "source.zdcode2",
             "path": "./syntaxes/zdcode.tmLanguage.json"
         }]
     }

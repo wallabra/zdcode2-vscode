@@ -6,51 +6,103 @@
 	],
 	"patterns": [
 		{
+			"name": "comment.line.double-slash",
+			"match": "\\/\\/.*?[\\n^]"
+		},
+		{
+			"name": "comment.block",
+			"match": "\\/\\*.*?\\*\\/"
+		},
+		{
 			"name": "constant.other",
 			"match": "^#INCLUDE [^\\n]+"
-		},
-		{
-			"name": "keyword.control",
-			"match": "\\b(if|while|return|call\\b|x)"
-		},
-		{
-			"name": "keyword.control",
-			"match": "\\b(wait|fail|loop|goto|stop)\\b"
 		},
 		{
 			"name": "keyword.control",
 			"match": "\\b((class|extends|expands|inherits|replaces)\\b|\\#\\d+)"
 		},
 		{
-			"name": "keyword.control",
-			"match": "\\b(label|function)\\b"
+			"name": "constant.numeric",
+			"match": "(?<![A-Za-z_])\\-?(\\d+|0x[0-9A-Fa-f]+|0b[01]+)(\\.(\\d+|0x[0-9A-Fa-f]+|0b[01]+))?"
 		},
 		{
-			"name": "keyword.other",
-			"match": "\\b(set|to)\\b"
+			"name": "classBody",
+			"begin": "\\{",
+			"end": "\\}(?>!\\;)",
+			"patterns": [{
+					"name": "keyword.control",
+					"match": "\\b(label|function)\\s"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "(?<![A-Za-z_])\\-?(\\d+|0x[0-9A-Fa-f]+|0b[01]+)(\\.(\\d+|0x[0-9A-Fa-f]+|0b[01]+))?"
+				},
+				{
+					"name": "keyword.other",
+					"match": "\\b(set|to)\\b"
+				},
+				{
+					"name": "keyword.other",
+					"match": "\\b(is\\b|\\+)"
+				},
+				{
+					"name": "keyword.other",
+					"match": "\\bcombo\\b"
+				},
+				{
+					"name": "keyword.other",
+					"match": "\\b(isn't\\b|\\-)"
+				},
+				{
+					"name": "constant.character",
+					"match": "(?<=\\;)[\\n\\s]+"
+				},
+				{
+					"name": "keyword.control",
+					"match": "(?<=call\\s)[a-zA-Z0-9_]+(?=;)"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "(?<![A-Za-z_])\\-?(\\d+|0x[0-9A-Fa-f]+|0b[01]+)(\\.(\\d+|0x[0-9A-Fa-f]+|0b[01]+))?"
+				},
+				{
+					"name": "entity.name.tag",
+					"match": "(?<=goto\\s)[a-zA-Z0-9_]+(?=;)"
+				},
+				{
+					"name": "entity.name.function",
+					"match": "[a-zA-Z0-9_]+(?=(\\(.*\\))?;)"
+				},
+				{
+					"name": "storage.modifier",
+					"match": "\\b\\[[a-zA-Z0-9 ]+\\]\\b"
+				},
+				{
+					"name": "constant.other",
+					"match": "[\\;\\s+][A-Za-z0-9_]{4}(?<!call|goto|jump|fail|wait|loop)(?=\\s+[A-Za-z\\[\\]\\\\]+)\\s+"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(if|while|return|call\\b|x)"
+				},
+				{
+					"name": "keyword.control",
+					"match": "\\b(wait|fail|loop|goto|stop)\\b"
+				},
+				{
+					"begin": "x\\s*\\d+\\s*",
+					"end": "\\s*",
+					"include": "$self"
+				},
+				{
+					"begin": "x\\s*\\d+\\s*\\{\\s*",
+					"end": "\\s*\\};\\s*",
+					"include": "$self"
+				}
+			]
 		},
 		{
-			"name": "keyword.other",
-			"match": "\\b(is\\b|\\+)"
-		},
-		{
-			"name": "keyword.other",
-			"match": "\\bcombo\\b"
-		},
-		{
-			"name": "keyword.other",
-			"match": "\\b(isn't\\b|\\-)"
-		},
-		{
-			"name": "entity.name.function",
-			"match": "[a-zA-Z0-9_]+(?=(\\(.*\\))?;)"
-		}
-	]
-},
-	],
-	"repository": {
-		"string-double": {
-			"name": "string.quoted.double",
+			"name": "literal.string",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [{
@@ -58,8 +110,8 @@
 				"match": "\\\\."
 			}]
 		},
-		"string-single": {
-			"name": "string.quoted.single",
+		{
+			"name": "literal.string",
 			"begin": "'",
 			"end": "'",
 			"patterns": [{
@@ -67,6 +119,6 @@
 				"match": "\\\\."
 			}]
 		}
-	},
-	"scopeName": "text.zdcode2"
+	],
+	"scopeName": "source.zdcode2"
 }

@@ -1,4 +1,4 @@
-# zdcode2-vscode
+# ZDCode 2.0 for VS Code
 
 This is the Visual Studio Code extension that allows ZDCode 2.x syntax highlighting. For more info on
 the syntax itself, please visit the README file in the
