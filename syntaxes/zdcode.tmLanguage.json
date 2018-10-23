@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ZDCode 2.x",
+	"fileTypes": [
+		".zc2"
+	],
+	"patterns": [
+		{
+			"name": "constant.other",
+			"match": "^#INCLUDE [^\\n]+"
+		},
+		{
+			"name": "keyword.control",
+			"match": "\\b(if|while|return|call\\b|x)"
+		},
+		{
+			"name": "keyword.control",
+			"match": "\\b(wait|fail|loop|goto|stop)\\b"
+		},
+		{
+			"name": "keyword.control",
+			"match": "\\b((class|extends|expands|inherits|replaces)\\b|\\#\\d+)"
+		},
+		{
+			"name": "keyword.control",
+			"match": "\\b(label|function)\\b"
+		},
+		{
+			"name": "keyword.other",
+			"match": "\\b(set|to)\\b"
+		},
+		{
+			"name": "keyword.other",
+			"match": "\\b(is\\b|\\+)"
+		},
+		{
+			"name": "keyword.other",
+			"match": "\\bcombo\\b"
+		},
+		{
+			"name": "keyword.other",
+			"match": "\\b(isn't\\b|\\-)"
+		},
+		{
+			"name": "entity.name.function",
+			"match": "[a-zA-Z0-9_]+(?=(\\(.*\\))?;)"
+		}
+	]
+},
+	],
+	"repository": {
+		"string-double": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [{
+				"name": "constant.character.escape",
+				"match": "\\\\."
+			}]
+		},
+		"string-single": {
+			"name": "string.quoted.single",
+			"begin": "'",
+			"end": "'",
+			"patterns": [{
+				"name": "constant.character.escape",
+				"match": "\\\\."
+			}]
+		}
+	},
+	"scopeName": "text.zdcode2"
+}
