@@ -2,7 +2,7 @@
     "name": "zdcode2-vscode",
     "displayName": "ZDCode 2.x for VS Code",
     "description": "ZDCode 2.x syntax highlighting for Visual Studio Code",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "gustavo6046",
     "author": {
         "name": "Gustavo R. Rehermann (Gustavo6046)",

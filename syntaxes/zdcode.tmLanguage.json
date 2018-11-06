@@ -83,7 +83,7 @@
 				},
 				{
 					"name": "keyword.control",
-					"match": "\\b(if|while|return|call\\b|x)"
+					"match": "\\b(if|sometimes|while|return|call\\b|x)"
 				},
 				{
 					"name": "keyword.control",
