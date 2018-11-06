@@ -98,6 +98,11 @@
 					"begin": "x\\s*\\d+\\s*\\{\\s*",
 					"end": "\\s*\\};\\s*",
 					"include": "$self"
+				},
+				{
+					"begin": "sometimes\\s+\\d+\\s*(\\%\\s*)?\\{\\s*",
+					"end": "\\s*\\};\\s*",
+					"include": "$self"
 				}
 			]
 		},
