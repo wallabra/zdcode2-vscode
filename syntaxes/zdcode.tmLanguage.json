@@ -83,7 +83,7 @@
 				},
 				{
 					"name": "keyword.control",
-					"match": "\\b(if|sometimes|while|return|call\\b|x)"
+					"match": "\\b(if|else|sometimes|while|return|call\\b|x)"
 				},
 				{
 					"name": "keyword.control",
@@ -100,7 +100,7 @@
 					"include": "$self"
 				},
 				{
-					"begin": "sometimes\\s+\\d+\\s*(\\%\\s*)?\\{\\s*",
+					"begin": "sometimes\\s+\\d+(\\%\\s*)?\\{\\s*",
 					"end": "\\s*\\};\\s*",
 					"include": "$self"
 				}
