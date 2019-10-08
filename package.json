@@ -1,7 +1,8 @@
 {
     "name": "zdcode2-vscode",
-    "displayName": "ZDCode 2.x for VS Code",
-    "description": "ZDCode 2.x syntax highlighting for Visual Studio Code",
+    "displayName": "ZDCode 2.0 for VS Code",
+    "description": "ZDCode 2.0 syntax highlighting for Visual Studio Code",
+    "icon": "images/ZDCode.png",
     "version": "0.1.0",
     "publisher": "gustavo6046",
     "author": {
@@ -22,7 +23,7 @@
     "contributes": {
         "languages": [{
             "id": "zdcode2",
-            "aliases": ["ZDCode 2.x", "zdcode2"],
+            "aliases": ["ZDCode 2.0", "zdcode2"],
             "extensions": [".zc2"],
             "configuration": "./language-configuration.json"
         }],
