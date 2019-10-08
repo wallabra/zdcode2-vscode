@@ -19,7 +19,7 @@
 		},
 		{
 			"name": "keyword.control",
-			"match": "\\b((class|extends|expands|inherits|replaces)\\b|\\#\\d+)"
+			"match": "\\b((actor|class|extends|expands|inherits|replaces)\\b|\\#\\d+)"
 		},
 		{
 			"name": "constant.numeric",
@@ -90,6 +90,10 @@
 					"match": "\\b(wait|fail|loop|goto|stop)\\b"
 				},
 				{
+					"name": "keyword.control",
+					"match": "((actor|class|extends|expands|inherits))"
+				},
+				{
 					"begin": "x\\s*\\d+\\s*",
 					"end": "\\s*",
 					"include": "$self"
@@ -103,7 +107,12 @@
 					"begin": "sometimes\\s+\\d+(\\%\\s*)?\\{\\s*",
 					"end": "\\s*\\};\\s*",
 					"include": "$self"
-				}
+				},
+                {
+                    "begin": "\\class(\\s+(extends|expands|inherits)\\s+[^\\s+])?\\s*{",
+					"end": "\\}(?>!\\;)",
+					"include": "$self"
+                }
 			]
 		},
 		{
